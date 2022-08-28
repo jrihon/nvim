@@ -7,5 +7,3 @@ if not goto_status_ok then
     return
 end
 
-
-vim.api.nvim_set_keymap("n", "<leader>gt", ":lua GoTo()<CR>", {noremap = true})

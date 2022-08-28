@@ -3,14 +3,6 @@ local telescope_status_ok, telescope = pcall(require, "telescope")
 if not telescope_status_ok then
     return
 end
-local keymap = vim.api.nvim_set_keymap
-local opts = {noremap = true}
-
--- Telescope remaps
-keymap('n', '<C-p>', ':Telescope find_files<CR>', opts )
-keymap('n', '<C-b>', ':Telescope buffers<CR>', opts )
-keymap('n', '<C-w>', ':Telescope live_grep<CR>', opts )
-
 
 -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
 local actions = require("telescope.actions")

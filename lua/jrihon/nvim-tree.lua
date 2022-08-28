@@ -6,17 +6,6 @@ if not nvim_tree_status_ok then
     return
 end
 
--- Set keymaps for filetree
---local autocmd = vim.api.create_autocmd
-local keymap = vim.api.nvim_set_keymap
-local opts = {noremap = true}
-
-
--- Open the filetree on the bufferpath
---cbd = vim.fn.expand('%:p:h')
---autocmd("BufEnter", {command=[[let g:cBG = expand('%:p:h')]]})
-keymap("n", "<leader>nw", ":NvimTreeOpen<CR>", opts) -- open the filetree in the buffer of the current file
-
 -- empty setup using defaults
 nvim_tree.setup({
   respect_buf_cwd = true,

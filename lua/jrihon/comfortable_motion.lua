@@ -8,7 +8,6 @@
 --
 -- vim.api.nvim_set_keymap("n", "<silent> <C-d>", ":call comfortable_motion#flick(100)<CR>", {noremap = true})
 -- vim.api.nvim_set_keymap("n", "<silent> <C-u>", ":call comfortable_motion#flick(-100)<CR>", {noremap = true})
--- This is a very ugly work around, but it would not work as a keymap setting
 vim.g.comfortable_motion_no_default_key_mappings = 1
 vim.cmd[[nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>]]
 vim.cmd[[nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>]]
