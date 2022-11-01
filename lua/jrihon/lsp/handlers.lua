@@ -43,6 +43,7 @@ local function lsp_keymaps()
   vim.api.nvim_set_keymap("n", "gI", ":Telescope lsp_implementations<CR>", opts)
   vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
   vim.api.nvim_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+  vim.api.nvim_set_keymap("n", "gF", ":lua vim.lsp.buf.formatting()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-a>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-f>", "<cmd>Format<cr>", opts)
   -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]

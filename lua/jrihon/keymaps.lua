@@ -16,7 +16,7 @@ vim.g.mapleader = " "
 
 --[[ Telescope remaps ]]
 keymap('n', '<C-p>', ':Telescope find_files<CR>', opts )
-keymap('n', '<C-b>', ':Telescope buffers<CR>', opts )
+keymap('n', '<C-q>', ':Telescope buffers<CR>', opts )
 keymap('n', '<C-w>', ':Telescope live_grep<CR>', opts )
 
 --[[ Mutineer remaps ]]
@@ -88,22 +88,7 @@ function SetMovementsInLatex()
   keymap("v", "j", "v:count ? 'j' : 'gj'", expr_opts )
   keymap("v", "k", "v:count ? 'k' : 'gk'", expr_opts )
 end
-autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.txt"}, command = [[ lua SetMovementsInLatex() ]]})
-
-
-
---[[ Misscelanious keymaps ]]
-
--- RipGrep search function in the cwd
-vim.api.nvim_set_keymap("n", "<leader>rg", ":Rg<SPACE>", opts ) -- RipGrep remap
-
--- Clip selection from visual mode and copy to clipboard
-vim.api.nvim_set_keymap("v", "<leader>pp", ":%w !xclip -selection clipboard<CR><CR> :echo 'Selection clipped!'<CR>", opts )
-
--- This actually maps the :W to :write !! I do this because I fat finger the :write command to :W often
-vim.cmd[[command! -nargs=* W w]]
-vim.cmd[[command! -nargs=* Wq wq]]
-vim.cmd[[command! -nargs=* Q q]]
+autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.txt"}, command = [[lua SetMovementsInLatex()]]})
 
 
 -- Toggle Quickfix list in LaTeX files, necessary whenever I compile a LaTeX document
@@ -117,7 +102,28 @@ function QuickfixToggle()
         vim.g.quickfix_is_open = 1
     end
 end
-vim.api.nvim_set_keymap("n", "<leader>c", ":lua QuickfixToggle()<CR>", opts )
+keymap("n", "<leader>c", ":lua QuickfixToggle()<CR>", opts )
+
+--[[ Custom keymaps ]]
+
+--local custom_functions = require('jrihon.custom_functions.clipboard')
+-- Clip selection from visual mode and copy to clipboard
+--local customs = require('custom_functions.copy2clipboard')
+--vim.api.nvim_create_user_command("Copy2Clipboard",
+--                            function () custom_functions.Copy2clipboard()
+--                            end,
+--                            { range = true })
+--
+--keymap("v", "<leader>pp", ':Copy2Clipboard<CR>' , opts)
+
+vim.api.nvim_set_keymap("v", "<leader>pp", ":%w !xclip -selection clipboard<CR><CR> :echo 'Selection clipped!'<CR>", opts )
+
+-- This actually maps the :W to :write !! I do this because I fat finger the :write command to :W often
+vim.cmd[[command! -nargs=* W w]]
+vim.cmd[[command! -nargs=* Wq wq]]
+vim.cmd[[command! -nargs=* Q q]]
+
+
 
 
 -- *.lib files are recognised as cobol. Set syntax off when entering a cobol file
