@@ -3,12 +3,26 @@
   ------------------------------------------------------------------ ]]
   -- TOOOOOOOOOKKKKYOOOOOOOOOO
 function SetSchemeTokio()
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_keywords = false
-vim.g.tokyonight_italic_comments = true
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_dark_sidebar = false
-vim.g.tokyonight_dark_float = true
+
+local TOKIO_status_ok, tokyonight = pcall(require, "tokyonight")
+if not TOKIO_status_ok then
+    return
+end
+
+
+tokyonight.setup({
+  style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+  light_style = "night",
+  transparent = true, -- Enable this to disable setting the background color
+  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+  styles = {
+    comments = { italic = true},
+    keywords = { italic = false},
+    sidebars = "dark", -- style for sidebars, see below
+    floats = "dark", -- style for floating windows
+  }
+})
+
 -- Load the colorscheme
 vim.cmd[[colorscheme tokyonight]]
 end
@@ -32,3 +46,13 @@ vim.cmd[[colorscheme gruvbox]]
 end
 
 --SetSchemeGruvBox()
+
+
+--[[ ------------------------------------------------------------------
+                            MOUNTAIN CONFIGURATION
+  ------------------------------------------------------------------ ]]
+function SetSchemeMountain()
+  vim.cmd[[colorscheme mountain]]
+end
+
+--SetSchemeMountain()

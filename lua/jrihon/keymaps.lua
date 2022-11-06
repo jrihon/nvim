@@ -50,6 +50,7 @@ keymap("n", "<leader>gt", ":lua GoTo()<CR>", opts)
 -- gI :Telescope lsp_implementations
 -- gr :Telescope lsp_references<CR>
 -- gd :lua vim.lsp.buf.definition()
+-- gF :lua vim.lsp.buf.formatter()
 
 
 
@@ -74,6 +75,10 @@ keymap("n", "<leader>tmux", ":e $HOME/.tmux.conf<CR>",  opts )
 keymap("n", "<leader>bash", ":e $HOME/.bashrc<CR>",  opts )
 keymap("n", "<leader>so", ":source $HOME/.config/nvim/init.lua<CR>",  opts )
 
+--[[ Avoid having stuff pasting or deleted to your yank register]]
+keymap("v", "<leader>p", "\"_dP",  opts )
+keymap("n", "<leader>d", "\"_d",  opts )
+keymap("v", "<leader>d", "\"_d",  opts )
 
 
 --[[ LaTeX remaps ]]
@@ -123,6 +128,8 @@ vim.cmd[[command! -nargs=* W w]]
 vim.cmd[[command! -nargs=* Wq wq]]
 vim.cmd[[command! -nargs=* Q q]]
 
+-- Make a command to call Rust's cargo system from the command mode
+vim.cmd[[command! -nargs=* Cargo !cargo <args>]]
 
 
 

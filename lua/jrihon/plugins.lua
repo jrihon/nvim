@@ -105,6 +105,7 @@ return packer.startup(function(use)
   -- Colorscheme and highlights
   use 'folke/tokyonight.nvim'                            -- TOKIIOOOOOOOOOOOOO
   use 'morhetz/gruvbox'                                  -- the best colorscheme in the world --ThePrimeagen
+  use 'mountain-theme/vim'                               -- Dave's recommendation
   use 'grimme-lab/orca.vim'                              -- syntax detection for orca input filetypes
   use({                                                  -- Markdown preview in browser
       'iamcco/markdown-preview.nvim',

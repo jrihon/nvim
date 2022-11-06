@@ -64,6 +64,6 @@ end
 -- Add additional capabilities supported by nvim-cmp
 -- LOAD CAPABILITIES AS A FINAL STEP
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+M.capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 return M
