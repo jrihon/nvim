@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/mutineer.lua",
     url = "https://github.com/jrihon/mutineer.lua"
   },
+  nvim = {
+    loaded = true,
+    path = "/home/jerome/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -198,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/home/jerome/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["telescope.nvim"] = {
     loaded = true,

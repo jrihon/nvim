@@ -8,6 +8,7 @@ if not mutineer_status_ok then
 end
 
 mutineer.setup({
-                -- lineCommentSymbols = {lua = '--'}
+        lineCommentSymbols = {lisp = ';',
+                              fennel = ";;"}
 })
 

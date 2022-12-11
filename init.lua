@@ -34,6 +34,7 @@ require("jrihon.lsp")                   -- This calls on the directory ~/.config
 --[[ Plugins for later
   https://github.com/lewis6991/impatient.nvim       -- caches nvim for faster startups
   https://github.com/windwp/nvim-autopairs          -- new symbol pairing plugin, replaces peartree
+  https://github.com/Saecki/crates.nvim             -- plugin to manage crates.io dependencies
   ]]
 
 
