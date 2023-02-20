@@ -13,6 +13,7 @@ M.setup = function ()                                   -- this method on the ta
       vim.fn.sign_define(sign.name, {texthl = sign.name, text = sign.text, numhl = ""})
   end
 
+  -- https://github.com/neovim/neovim/blob/master/runtime/lua/vim/lsp/util.lua
   local config = {
       virtual_text = true, -- enable/disable virtual text
       signs = {
@@ -22,12 +23,12 @@ M.setup = function ()                                   -- this method on the ta
       underline = true,
       severity_sort = true,
       float = {
-          focusable = false,
-          style = "minimal",
-          border = "none",
-          source = "always",
-          header = "",
-          prefix = "",
+          focusable = true,
+--          style = 'minimal',
+          border = 'rounded', -- none, single, double, rounded, solid, shadow
+          source = 'always',
+--          header = "",
+--          prefix = "",
       },
   }
   vim.diagnostic.config(config)
@@ -43,7 +44,7 @@ local function lsp_keymaps()
   vim.api.nvim_set_keymap("n", "gI", ":Telescope lsp_implementations<CR>", opts)
   vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
   vim.api.nvim_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
-  vim.api.nvim_set_keymap("n", "gF", ":lua vim.lsp.buf.formatting()<CR>", opts)
+  vim.api.nvim_set_keymap("n", "gF", ":lua vim.lsp.buf.format()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-a>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-f>", "<cmd>Format<cr>", opts)
   -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]

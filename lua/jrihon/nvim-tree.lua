@@ -6,17 +6,52 @@ if not nvim_tree_status_ok then
     return
 end
 
+nvim_tree.setup({})
 -- empty setup using defaults
-nvim_tree.setup({
-  respect_buf_cwd = true,
-  open_on_setup = true,
-  -- https://stackoverflow.com/questions/71346431/neovim-nvim-tree-doesnt-open-current-directory-only-the-parent-directory-with-g
-  update_focused_file = {
-                  enable = true,
-                  update_cwd = true,
-               },
+--nvim_tree.setup({
+--  respect_buf_cwd = true,
+--  open_on_setup = true,
+--  -- https://stackoverflow.com/questions/71346431/neovim-nvim-tree-doesnt-open-current-directory-only-the-parent-directory-with-g
+--  update_focused_file = {
+--                  enable = true,
+--                  update_cwd = true,
+--               },
+--})
+--local function open_nvim_tree(data)
+--
+--  -- buffer is a directory
+--  local directory = vim.fn.isdirectory(data.file) == 1
+--
+--  if not directory then
+--    return
+--  end
+--
+--  -- change to the directory
+--  vim.cmd.cd(data.file)
+--
+--  -- open the tree
+--  require("nvim-tree.api").tree.open()
+--end
+
+require("nvim-tree.api").tree.open({
+	path = nil,
+	current_window = false,
+	find_file = false,
+	update_root = true,
 })
 
+
+-- Update the root directory upon changing buffers
+local function open_nvim_tree()
+
+    local f = vim.fn.expand('%:p:h')
+    local file = vim.fn.isdirectory(f) == 1
+    if not file then return end
+
+    require("nvim-tree.api").tree.change_root(f)
+end
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, { callback = open_nvim_tree })
 
 --[[ NVIM TREE COMMANDS
     |:NvimTreeOpen| opens the tree. Takes an optional path argument.

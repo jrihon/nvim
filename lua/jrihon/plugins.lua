@@ -64,7 +64,8 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lua'                             -- Completion for the LSP engine for neovim
   use 'L3MON4D3/LuaSnip'                                 -- Snippets engine, just to tab complete blocks of boilerplate code of text
   use 'rafamadriz/friendly-snippets'                     -- a bunch of snippets to use
-  use 'williamboman/nvim-lsp-installer'                  -- Bootstraps all of the LSP for you with doing much
+--  use 'williamboman/nvim-lsp-installer'                  -- Bootstraps all of the LSP for you with doing much
+  use 'williamboman/mason.nvim'                          -- new LSP installer tool
   use 'ray-x/lsp_signature.nvim'                         -- Function signatures while writing code
   --    use {                                            -- Syntax Highlighter
   --        'nvim-treesitter/nvim-treesitter',
@@ -78,12 +79,13 @@ return packer.startup(function(use)
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} } }
   use {                                                  -- File tree plugin and web dev icons
-      'kyazdani42/nvim-tree.lua',
-      requires = {'kyazdani42/nvim-web-devicons'} }
+      'nvim-tree/nvim-tree.lua',
+      requires = {'nvim-tree/nvim-web-devicons'} }
   use 'akinsho/toggleterm.nvim'                          -- Toggle a floating terminal
   use 'tpope/vim-fugitive'                               -- Git plugin, to flow better with vim
   use 'lervag/vimtex'                                    -- Plugin to use latex in neovim
-  use 'tmsvg/pear-tree'                                  -- autcomplete pairs of brackets, quotes ...
+  use 'windwp/nvim-autopairs'                            -- automatically add pairs
+--  use 'tmsvg/pear-tree'                                  -- autcomplete pairs of brackets, quotes ...
   use 'yuttie/comfortable-motion.vim'                    -- Plugin to make scrolling smoother.
   use 'jrihon/goto.nvim'                                 -- Easier navigation through nvim's init.lua system
   use 'jrihon/mutineer.lua'                               -- Smooth commenting and uncommenting
@@ -93,11 +95,11 @@ return packer.startup(function(use)
   -- Status lines and buffer bars
   use {
       'nvim-lualine/lualine.nvim',                      -- Lua-configured status line
-       requires = { 'kyazdani42/nvim-web-devicons',
+       requires = { 'nvim-tree/nvim-web-devicons',
            opt = true } }
   use {
       'akinsho/bufferline.nvim',                        -- Bufferline, to show tabs of active buffers
-        requires = 'kyazdani42/nvim-web-devicons',
+        requires = 'nvim-tree/nvim-web-devicons',
            tag = "v2.*"}
 
 
@@ -107,8 +109,8 @@ return packer.startup(function(use)
   use 'morhetz/gruvbox'                                  -- the best colorscheme in the world --ThePrimeagen
   use 'catppuccin/nvim'                                  -- Catppuccin colorscheme, see what the hype is
   use 'mountain-theme/vim'                               -- Dave's recommendation
-
   use({ 'rose-pine/neovim', as = 'rose-pine', })         -- Rosé Pine colorscheme, see what is up
+  use 'EdenEast/nightfox.nvim'                           -- Bashbunni's recommendation
   use 'grimme-lab/orca.vim'                              -- syntax detection for orca input filetypes
   use({                                                  -- Markdown preview in browser
       'iamcco/markdown-preview.nvim',
@@ -119,6 +121,13 @@ return packer.startup(function(use)
   -- Vim misscelanious
   use 'ap/vim-css-color'                                 -- whenever you use rgba or hexcode in your scripts, this highlights the colourcode as that colour
   use 'junegunn/goyo.vim'                                -- distraction free reading
+  use({
+  "giusgad/pets.nvim",
+    requires = {
+      "edluffy/hologram.nvim",
+      "MunifTanjim/nui.nvim",
+    }
+  })
   -- use  'jrihon/uwu.vim'
 
   -- plugin projects

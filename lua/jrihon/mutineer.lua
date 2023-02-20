@@ -9,6 +9,8 @@ end
 
 mutineer.setup({
         lineCommentSymbols = {lisp = ';',
-                              fennel = ";;"}
+                              fennel = ";;",
+                              yaml = "#",
+                              toml = "#"}
 })
 

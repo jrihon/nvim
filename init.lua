@@ -19,6 +19,7 @@ require("jrihon.bufferline")            -- Status bar for files in buffer
 require("jrihon.toggleterm")            -- Toggle floating terminal in nvim
 require("jrihon.vimtex")                -- VimTex helpful information
 require("jrihon.colorschemes")          -- colorschemes
+require("jrihon.autopairs")             -- autopair symbols
 require("jrihon.comfortable_motion")    -- Comfortable motion for smooth scrolling
 require("jrihon.orca")                  -- Orca input files syntax highlighting
 require("jrihon.goyo")                  -- Distraction-free reading
@@ -33,7 +34,6 @@ require("jrihon.lsp")                   -- This calls on the directory ~/.config
 
 --[[ Plugins for later
   https://github.com/lewis6991/impatient.nvim       -- caches nvim for faster startups
-  https://github.com/windwp/nvim-autopairs          -- new symbol pairing plugin, replaces peartree
   https://github.com/Saecki/crates.nvim             -- plugin to manage crates.io dependencies
   ]]
 

@@ -55,5 +55,13 @@ lualine.setup({
     theme = theme,                                      -- Import the theme variable
     component_separators = '|',
     section_separators = { left = '', right = '' },   -- Bubble theme
+    sections = {
+      lualine_a = {
+        { 'mode', separator = { left = '' }, right_padding = 10 },
+      },
+      lualine_z = {
+        { 'location', separator = { right = '' }, left_padding = 10 },
+      },
+    },
   },
 })

@@ -76,9 +76,11 @@ keymap("n", "<leader>bash", ":e $HOME/.bashrc<CR>",  opts )
 keymap("n", "<leader>so", ":source $HOME/.config/nvim/init.lua<CR>",  opts )
 
 --[[ Avoid having stuff pasting or deleted to your yank register]]
-keymap("v", "<leader>p", "\"_dP",  opts )
-keymap("n", "<leader>d", "\"_d",  opts )
-keymap("v", "<leader>d", "\"_d",  opts )
+-- when pasting something, in v-mode, use capital P to paste, so the deleted 
+-- text is not sent to your registry
+--keymap("v", "<leader>p", "\"_dP",  opts )
+--keymap("n", "<leader>d", "\"_d",  opts )
+--keymap("v", "<leader>d", "\"_d",  opts )
 
 
 --[[ LaTeX remaps ]]
