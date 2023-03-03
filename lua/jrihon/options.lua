@@ -33,7 +33,8 @@ end
 -- general commands
 vim.cmd[[filetype indent on]]
 vim.cmd[[syntax on]]
-vim.cmd[[set guicursor=]]
+vim.cmd[[set guicursor=]] -- disable toggling between thin and block cursor
+vim.cmd[[set mouse=]] --disable mouse support
 
 -- global option for setting splits
 vim.g.netrw_browse_split = 2

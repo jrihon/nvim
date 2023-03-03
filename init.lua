@@ -33,6 +33,7 @@ require("jrihon.lsp")                   -- This calls on the directory ~/.config
 
 
 --[[ Plugins for later
+  https://github.com/folke/trouble.nvim             -- prettify all diagnostics and quickfix list
   https://github.com/lewis6991/impatient.nvim       -- caches nvim for faster startups
   https://github.com/Saecki/crates.nvim             -- plugin to manage crates.io dependencies
   ]]

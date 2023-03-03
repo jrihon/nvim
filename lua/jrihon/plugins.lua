@@ -111,6 +111,10 @@ return packer.startup(function(use)
   use 'mountain-theme/vim'                               -- Dave's recommendation
   use({ 'rose-pine/neovim', as = 'rose-pine', })         -- Rosé Pine colorscheme, see what is up
   use 'EdenEast/nightfox.nvim'                           -- Bashbunni's recommendation
+  use({
+    "jesseleite/nvim-noirbuddy",
+    requires = { "tjdevries/colorbuddy.nvim", branch = "dev" }
+    })
   use 'grimme-lab/orca.vim'                              -- syntax detection for orca input filetypes
   use({                                                  -- Markdown preview in browser
       'iamcco/markdown-preview.nvim',

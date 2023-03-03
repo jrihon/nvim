@@ -201,6 +201,20 @@ require('nightfox').setup({
 vim.cmd("colorscheme nightfox")
 end
 
+function SetSchemeNoirbuddy()
+
+local Noir_status_ok, noirbuddy = pcall(require, "noirbuddy")
+if not Noir_status_ok then
+    return
+end
+
+noirbuddy.setup({
+    preset = 'slate',
+})
+end
+
+
+
 -- Set the configuration of your choice
 SetSchemeTokio()
 --SetSchemeGruvBox() -- legacy
@@ -208,3 +222,4 @@ SetSchemeTokio()
 --SetSchemeMountain() -- very vague hues
 --SetSchemeRosePine() -- very very pastel
 --SetSchemeNightfox()
+--SetSchemeNoirbuddy()
