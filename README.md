@@ -23,6 +23,8 @@
     # Optional
     $ alias nv="PATH/TO/neovim/build/bin/nvim"
     ```
+- I use the [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads). Add contents of zip to `$HOME/.local/share/fonts`
+
 - In order to use Mason (the LSP manager), install the Javascript package manager Node 
     ```bash
     $ sudo apt install npm
