@@ -66,7 +66,8 @@ return packer.startup(function(use)
   use 'rafamadriz/friendly-snippets'                     -- a bunch of snippets to use
 --  use 'williamboman/nvim-lsp-installer'                  -- Bootstraps all of the LSP for you with doing much
   use 'williamboman/mason.nvim'                          -- new LSP installer tool
-  use 'ray-x/lsp_signature.nvim'                         -- Function signatures while writing code
+  use 'williamboman/mason-lspconfig.nvim'                -- to be used with the mason plugin
+  --use 'ray-x/lsp_signature.nvim'                         -- Function signatures while writing code
   --    use {                                            -- Syntax Highlighter
   --        'nvim-treesitter/nvim-treesitter',
   --        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -78,6 +79,7 @@ return packer.startup(function(use)
   use {                                                  -- Telescope, fuzzy finding words in directories and files
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} } }
+  use 'nvim-tree/nvim-web-devicons'                      -- Dev Icons
   use {                                                  -- File tree plugin and web dev icons
       'nvim-tree/nvim-tree.lua',
       requires = {'nvim-tree/nvim-web-devicons'} }
@@ -118,20 +120,24 @@ return packer.startup(function(use)
   use 'grimme-lab/orca.vim'                              -- syntax detection for orca input filetypes
   use({                                                  -- Markdown preview in browser
       'iamcco/markdown-preview.nvim',
-      run = function() vim.fn["mkdp#util#install"]() end,})
+      run = function() vim.fn["mkdp#util#install"]() end,}
+      )
+  use({'kaarmu/typst.vim', ft = {'typst'}})              -- Typst syntax highlighting
+
 
 
 
   -- Vim misscelanious
   use 'ap/vim-css-color'                                 -- whenever you use rgba or hexcode in your scripts, this highlights the colourcode as that colour
   use 'junegunn/goyo.vim'                                -- distraction free reading
-  use({
-  "giusgad/pets.nvim",
-    requires = {
-      "edluffy/hologram.nvim",
-      "MunifTanjim/nui.nvim",
-    }
-  })
+  --use 'eandrju/cellular-automaton.nvim'                  -- screensaver
+  --use({
+  --"giusgad/pets.nvim",
+  --  requires = {
+  --    "edluffy/hologram.nvim",
+  --    "MunifTanjim/nui.nvim",
+  --  }
+  --})
   -- use  'jrihon/uwu.vim'
 
   -- plugin projects

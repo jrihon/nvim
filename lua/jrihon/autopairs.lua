@@ -13,6 +13,7 @@ npairs.setup {
 -- Add autopairing for inline $$ environment in latex
 local Rule = require('nvim-autopairs.rule')
 npairs.add_rule(Rule("$","$","tex"))
+npairs.add_rule(Rule("$","$","typst"))
 
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 local cmp_status_ok, cmp = pcall(require, "cmp")

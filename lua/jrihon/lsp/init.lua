@@ -12,7 +12,8 @@ local capabilities = require("jrihon.lsp.handlers").capabilities
 
 lspconfig["pyright"].setup({ -- PYTHON
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = require("jrihon.lsp.settings.pyright")
 })
 
 lspconfig["rust_analyzer"].setup({ -- RUST
@@ -29,3 +30,14 @@ lspconfig["texlab"].setup({ -- VIM
     on_attach = on_attach,
     capabilities = capabilities
 })
+
+lspconfig["lua_ls"].setup({ -- LUA
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = require("jrihon.lsp.settings.lua_ls")
+})
+
+--lspconfig["typst_lsp"].setup({ -- LUA
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+--})

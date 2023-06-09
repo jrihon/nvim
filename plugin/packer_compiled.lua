@@ -139,16 +139,6 @@ _G.packer_plugins = {
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
-  ["hologram.nvim"] = {
-    loaded = true,
-    path = "/home/jerome/.local/share/nvim/site/pack/packer/start/hologram.nvim",
-    url = "https://github.com/edluffy/hologram.nvim"
-  },
-  ["lsp_signature.nvim"] = {
-    loaded = true,
-    path = "/home/jerome/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
-    url = "https://github.com/ray-x/lsp_signature.nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -158,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/jerome/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
@@ -173,11 +168,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
-  },
-  ["nui.nvim"] = {
-    loaded = true,
-    path = "/home/jerome/.local/share/nvim/site/pack/packer/start/nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   nvim = {
     loaded = true,
@@ -224,11 +214,6 @@ _G.packer_plugins = {
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["pets.nvim"] = {
-    loaded = true,
-    path = "/home/jerome/.local/share/nvim/site/pack/packer/start/pets.nvim",
-    url = "https://github.com/giusgad/pets.nvim"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -254,6 +239,13 @@ _G.packer_plugins = {
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["typst.vim"] = {
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/jerome/.local/share/nvim/site/pack/packer/opt/typst.vim",
+    url = "https://github.com/kaarmu/typst.vim"
+  },
   vim = {
     loaded = true,
     path = "/home/jerome/.local/share/nvim/site/pack/packer/start/vim",
@@ -277,6 +269,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType typst ++once lua require("packer.load")({'typst.vim'}, { ft = "typst" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
+vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /home/jerome/.local/share/nvim/site/pack/packer/opt/typst.vim/ftdetect/typst.vim]], true)
+vim.cmd [[source /home/jerome/.local/share/nvim/site/pack/packer/opt/typst.vim/ftdetect/typst.vim]]
+time([[Sourcing ftdetect script at: /home/jerome/.local/share/nvim/site/pack/packer/opt/typst.vim/ftdetect/typst.vim]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

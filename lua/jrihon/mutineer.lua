@@ -11,6 +11,7 @@ mutineer.setup({
         lineCommentSymbols = {lisp = ';',
                               fennel = ";;",
                               yaml = "#",
+                              typst = "//",
                               toml = "#"}
 })
 

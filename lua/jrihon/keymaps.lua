@@ -73,6 +73,7 @@ keymap("n", "<leader>-", ":vertical resize -15<CR>", opts) -- resize vertical sp
 keymap("n", "<leader>nvim", ":e $HOME/.config/nvim/init.lua<CR>",  opts )
 keymap("n", "<leader>tmux", ":e $HOME/.tmux.conf<CR>",  opts )
 keymap("n", "<leader>bash", ":e $HOME/.bashrc<CR>",  opts )
+keymap("n", "<leader>kitty", ":e $HOME/.config/kitty/kitty.conf<CR>",  opts )
 keymap("n", "<leader>so", ":source $HOME/.config/nvim/init.lua<CR>",  opts )
 
 --[[ Avoid having stuff pasting or deleted to your yank register]]
@@ -85,8 +86,8 @@ keymap("n", "<leader>so", ":source $HOME/.config/nvim/init.lua<CR>",  opts )
 
 --[[ LaTeX remaps ]]
 -- In LaTeX files, set linebreak and wrap text around terminal column limits
-autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.txt"}, command = [[set wrap]]})
-autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.txt"}, command = [[set linebreak]]})
+autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typst", "*.txt"}, command = [[set wrap]]})
+autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typst", "*.txt"}, command = [[set linebreak]]})
 
 -- function to set movement mappings for LaTex (wrapped text)
 function SetMovementsInLatex()
@@ -95,7 +96,7 @@ function SetMovementsInLatex()
   keymap("v", "j", "v:count ? 'j' : 'gj'", expr_opts )
   keymap("v", "k", "v:count ? 'k' : 'gk'", expr_opts )
 end
-autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.txt"}, command = [[lua SetMovementsInLatex()]]})
+autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typst", "*.txt"}, command = [[lua SetMovementsInLatex()]]})
 
 
 -- Toggle Quickfix list in LaTeX files, necessary whenever I compile a LaTeX document

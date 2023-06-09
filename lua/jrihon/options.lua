@@ -40,3 +40,9 @@ vim.cmd[[set mouse=]] --disable mouse support
 vim.g.netrw_browse_split = 2
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+
+-- recognise typst filetype
+local create_autocmd = vim.api.nvim_create_autocmd
+local events = {"BufNewFile", "BufRead"}
+create_autocmd(events, { pattern = {"*.typst"}, command = [[ set filetype=typst ]]})
