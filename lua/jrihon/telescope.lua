@@ -6,14 +6,13 @@ end
 
 -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
 local actions = require("telescope.actions")
+
 telescope.setup({
   defaults = {
     initial_mode = "normal",        -- the initial mode I want to start in is normal mode, because I probably switch buffers more often
     i = { ["<CR>"] = actions.select_default, }
   },
 })
-
-
 
 
 

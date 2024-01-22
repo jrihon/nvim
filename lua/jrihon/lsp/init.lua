@@ -15,6 +15,16 @@ lspconfig["pyright"].setup({ -- PYTHON
     capabilities = capabilities,
     settings = require("jrihon.lsp.settings.pyright")
 })
+--lspconfig["ruff_lsp"].setup({ -- PYTHON
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+--    init_options = {
+--    settings = {
+--      -- Any extra CLI arguments for `ruff` go here.
+--      args = {},
+--    }
+--  }
+--})
 
 lspconfig["rust_analyzer"].setup({ -- RUST
     on_attach = on_attach,
@@ -26,18 +36,21 @@ lspconfig["texlab"].setup({ -- LaTeX
     capabilities = capabilities
 })
 
-lspconfig["texlab"].setup({ -- VIM
-    on_attach = on_attach,
-    capabilities = capabilities
+lspconfig.typst_lsp.setup({ -- Typst
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+    settings = {
+		exportPdf = "never" -- Choose onType, onSave or never.
+        -- serverPath = "" -- Normally, there is no need to uncomment it.
+	},
 })
+--lspconfig["vimls"].setup({ -- VIM
+--    on_attach = on_attach,
+--    capabilities = capabilities
+--})
 
 lspconfig["lua_ls"].setup({ -- LUA
     on_attach = on_attach,
     capabilities = capabilities,
     settings = require("jrihon.lsp.settings.lua_ls")
 })
-
---lspconfig["typst_lsp"].setup({ -- LUA
---    on_attach = on_attach,
---    capabilities = capabilities,
---})

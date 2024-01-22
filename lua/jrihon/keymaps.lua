@@ -86,8 +86,8 @@ keymap("n", "<leader>so", ":source $HOME/.config/nvim/init.lua<CR>",  opts )
 
 --[[ LaTeX remaps ]]
 -- In LaTeX files, set linebreak and wrap text around terminal column limits
-autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typst", "*.txt"}, command = [[set wrap]]})
-autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typst", "*.txt"}, command = [[set linebreak]]})
+autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typ", "*.txt", "*.md"}, command = [[set wrap]]})
+autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typ", "*.txt", "*.md"}, command = [[set linebreak]]})
 
 -- function to set movement mappings for LaTex (wrapped text)
 function SetMovementsInLatex()
@@ -96,7 +96,7 @@ function SetMovementsInLatex()
   keymap("v", "j", "v:count ? 'j' : 'gj'", expr_opts )
   keymap("v", "k", "v:count ? 'k' : 'gk'", expr_opts )
 end
-autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typst", "*.txt"}, command = [[lua SetMovementsInLatex()]]})
+autocmd({"BufNewFile", "BufRead"}, { pattern = {"*.tex", "*.typ", "*.txt", "*.md"}, command = [[lua SetMovementsInLatex()]]})
 
 
 -- Toggle Quickfix list in LaTeX files, necessary whenever I compile a LaTeX document

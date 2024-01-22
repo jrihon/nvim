@@ -89,6 +89,7 @@ return packer.startup(function(use)
   use 'windwp/nvim-autopairs'                            -- automatically add pairs
 --  use 'tmsvg/pear-tree'                                  -- autcomplete pairs of brackets, quotes ...
   use 'yuttie/comfortable-motion.vim'                    -- Plugin to make scrolling smoother.
+  use 'airblade/vim-rooter'                              -- Find root directories of projects
   use 'jrihon/goto.nvim'                                 -- Easier navigation through nvim's init.lua system
   use 'jrihon/mutineer.lua'                               -- Smooth commenting and uncommenting
 
@@ -102,7 +103,7 @@ return packer.startup(function(use)
   use {
       'akinsho/bufferline.nvim',                        -- Bufferline, to show tabs of active buffers
         requires = 'nvim-tree/nvim-web-devicons',
-           tag = "v2.*"}
+           tag = "*"}
 
 
 

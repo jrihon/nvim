@@ -10,6 +10,7 @@
 require("jrihon.plugins")               -- nvim plugins and plugin options using Packer.nvim
 require("jrihon.options")               -- nvim basic options
 require("jrihon.keymaps")               -- nvim basic and custom keymaps
+require("jrihon.vimrooter")             -- find root directory of projects
 require("jrihon.telescope")             -- Telescope Fuzzy Finder
 require("jrihon.cmp")                   -- Completion engine
 require("jrihon.mutineer")              -- jrihon/mutineer.vim best commenting tool
