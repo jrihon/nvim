@@ -61,7 +61,7 @@ end
 
 
 -- Create auto commands
-autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+--autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 autocmd({ "BufEnter" }, { callback = update_root_dir })
 
 

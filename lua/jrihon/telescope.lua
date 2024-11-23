@@ -4,6 +4,10 @@ if not telescope_status_ok then
     return
 end
 
+local autocmd = vim.api.nvim_create_autocmd
+local nvim_cmd = vim.api.nvim_cmd
+
+
 -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
 local actions = require("telescope.actions")
 
@@ -26,6 +30,15 @@ if vim.fn.executable('rg') == 0 then
     print("install RipGrep through :\n$ sudo apt install ripgrep")
 end
 
+
+-- https://www.reddit.com/r/neovim/comments/14m2y7a/open_telescope_when_starting_neovim_but_only_no/?rdt=61968
+autocmd("VimEnter", {
+  callback = function()
+    if vim.fn.argv(0) == "" then
+      require("telescope.builtin").find_files()
+    end
+  end,
+})
 
 
 --[[
