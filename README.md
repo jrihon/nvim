@@ -17,7 +17,7 @@
     - Install :
     ```bash
     $ git clone https://github.com/neovim/neovim        # clone repostitory
-    $ cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo # make build files
+    $ cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo # make build files
     $ sudo make install                                 # install neovim
 
     # Optional
@@ -33,10 +33,14 @@
 
 ## Lua config layout
 ```
-~/.config/nvim/ - init.lua
-                - lua/jrihon/ - *.lua
-                              - lsp/ - *.lua
-                                     - settings/ *.lua
+~/.config/nvim/ 
+    - init.lua
+    - lua/jrihon/
+        - *.lua
+        - lsp/
+            - *.lua
+            - settings/
+                *.lua
 ```
 
 ## Plugging my content
