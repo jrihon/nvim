@@ -23,7 +23,7 @@ local options = {
   fileencoding = 'utf-8',                               -- utf-8 encoding
   completeopt = {"menu", "menuone", "noselect"},        -- completion (cmp) stuff
   list = true,
-  listchars = 'tab:→ ,trail:·,eol:⏎', 			-- show hidden symbols
+  listchars = 'tab:→ ,trail:·,space:·', 			-- show hidden symbols, eol:⏎
 }
 -- far better readability by iterating over the table and prepending to option
 for k, v in pairs(options) do

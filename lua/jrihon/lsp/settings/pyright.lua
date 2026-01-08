@@ -2,6 +2,7 @@ return {
   cmd = { "python" },
   settings = {
     python = {
+      -- venv = { "biolizard-platform" },
       analysis = {
         typeCheckingMode = "basic",
         diagnosticMode = "workspace",
