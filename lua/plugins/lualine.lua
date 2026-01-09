@@ -47,16 +47,8 @@ local theme = {     -- Set a colorscheme for all modes of vim
 }
 
 return {
-  {
-    "akinsho/bufferline.nvim",
-    dependencies = { 
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
-  {
-  -- Lua-configured status line
   "nvim-lualine/lualine.nvim",
-   dependencies = { 
+   dependencies = {
      "nvim-tree/nvim-web-devicons",
    },
    opts = {
@@ -73,8 +65,7 @@ return {
          },
        },
      },
-    },
-  }
+  },
 }
 
 --vim.opt.termguicolors = true
