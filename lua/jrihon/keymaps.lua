@@ -40,7 +40,8 @@ keymap("n", "<leader>nw", ":NvimTreeOpen<CR>", opts) -- open the filetree in the
 -- <C-u> has been mapped to a comfortable motion scrolling option
 
 --[[ GoTo mappings ]]
-keymap("n", "<leader>gt", ":lua GoTo()<CR>", opts)
+-- does not work because the GoTo() function is not imported for some reason
+--keymap("n", "<leader>gt", ":lua GoTo()<CR>", opts)
 
 --[[ LSP remaps]]
 -- gD :lua vim.diagnostic.open_float()

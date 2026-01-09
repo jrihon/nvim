@@ -34,4 +34,9 @@ require("config.options")
 require("config.keymaps")
 
 -- Setup lazy.nvim
-require("lazy").setup("plugins")
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
+    { import = "lsp" },
+  },
+})
