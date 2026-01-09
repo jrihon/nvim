@@ -37,6 +37,9 @@ require("config.keymaps")
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    { import = "lsp" },
+    { import = "plugins.lsp" },
   },
 })
+
+-- import the nvim/lua/lsp.lua afterwards
+require("lsp")

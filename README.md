@@ -30,7 +30,10 @@
     $ sudo apt install npm
     ```
 
+## Using pyright
+Before using pyright, first install `nvm` and `npm` through this [link](https://nodejs.org/en/download/)
 
+The `after/` directory is for specific, customised plugins for the lsp
 ## Lua config layout
 ```
 ~/.config/nvim/ 
@@ -43,5 +46,7 @@
                 *.lua
 ```
 
+<!-- 
 ## Plugging my content
 Consider using [GoTo.nvim](https://github.com/jrihon/goto.nvim) to navigate throughout your lua configs with more ease.
+-->
