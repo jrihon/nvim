@@ -46,4 +46,3 @@ vim.g.netrw_winsize = 25
 local create_autocmd = vim.api.nvim_create_autocmd
 local events = {"BufNewFile", "BufRead"}
 create_autocmd(events, { pattern = {"*.typ"}, command = [[ set filetype=typst ]]})
---create_autocmd(events, { pattern = {"*.typ"}, command = [[ set filetype=typst ]]})

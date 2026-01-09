@@ -113,17 +113,6 @@ end
 keymap("n", "<leader>c", ":lua QuickfixToggle()<CR>", opts )
 
 --[[ Custom keymaps ]]
-
---local custom_functions = require('jrihon.custom_functions.clipboard')
--- Clip selection from visual mode and copy to clipboard
---local customs = require('custom_functions.copy2clipboard')
---vim.api.nvim_create_user_command("Copy2Clipboard",
---                            function () custom_functions.Copy2clipboard()
---                            end,
---                            { range = true })
---
---keymap("v", "<leader>pp", ':Copy2Clipboard<CR>' , opts)
-
 vim.api.nvim_set_keymap("v", "<leader>pp", ":%w !xclip -selection clipboard<CR><CR> :echo 'Selection clipped!'<CR>", opts )
 
 -- This actually maps the :W to :write !! I do this because I fat finger the :write command to :W often
