@@ -1,6 +1,4 @@
 local autocmd = vim.api.nvim_create_autocmd
-local nvim_cmd = vim.api.nvim_cmd
-
 
 
 --telescope.setup({
@@ -9,18 +7,6 @@ local nvim_cmd = vim.api.nvim_cmd
 --    i = { ["<CR>"] = actions.select_default, }
 --  },
 --})
-
-
-
--- install the following "$ sudo apt install silversearcher-ag"
---if vim.fn.executable('ag') == 0 then
---    print("install silversearcher-ag through :\n$ sudo apt install silversearcher-ag")
---end
---
--- install the following "$ sudo apt install silversearcher-ag"
---if vim.fn.executable('rg') == 0 then
---    print("install RipGrep through :\n$ sudo apt install ripgrep")
---end
 
 
 -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
