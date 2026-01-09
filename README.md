@@ -4,7 +4,7 @@
 
 - Keep this in the `~/.config/` directory .
 
-- Uses [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- Uses [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 - Neovim configuration, written in Lua. Using LSP support and `cmp`-based completion engine.
 
@@ -25,15 +25,12 @@
     ```
 - I use the [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads). Add contents of zip to `$HOME/.local/share/fonts`
 
-- In order to use Mason (the LSP manager), install the Javascript package manager Node 
-    ```bash
-    $ sudo apt install npm
-    ```
 
 ## Using pyright
 Before using pyright, first install `nvm` and `npm` through this [link](https://nodejs.org/en/download/)
 
 The `after/` directory is for specific, customised plugins for the lsp
+
 ## Lua config layout
 ```
 ~/.config/nvim/ 
@@ -52,16 +49,13 @@ The `after/` directory is for specific, customised plugins for the lsp
     │       ├── colorscheme.lua
     │       ├── comfortable_motion.lua
     │       ├── lsp
+    │       │   ├── lsp-completion.lua
     │       │   └── mason.lua
     │       ├── mutineer.lua
+    │       ├── nvim-cmp.lua
     │       ├── nvim-tree.lua
     │       ├── statuslines.lua
     │       ├── telescope.lua
     │       └── toggleterm.lua
     └── README.md
 ```
-
-<!-- 
-## Plugging my content
-Consider using [GoTo.nvim](https://github.com/jrihon/goto.nvim) to navigate throughout your lua configs with more ease.
--->
