@@ -37,13 +37,28 @@ The `after/` directory is for specific, customised plugins for the lsp
 ## Lua config layout
 ```
 ~/.config/nvim/ 
-    - init.lua
-    - lua/jrihon/
-        - *.lua
-        - lsp/
-            - *.lua
-            - settings/
-                *.lua
+    ├── after
+    │   └── lsp
+    │       └── lua_ls.lua
+    ├── init.lua
+    ├── lazy-lock.json
+    ├── lua
+    │   ├── config
+    │   │   ├── keymaps.lua
+    │   │   └── options.lua
+    │   ├── lsp.lua
+    │   └── plugins
+    │       ├── autopairs.lua
+    │       ├── colorscheme.lua
+    │       ├── comfortable_motion.lua
+    │       ├── lsp
+    │       │   └── mason.lua
+    │       ├── mutineer.lua
+    │       ├── nvim-tree.lua
+    │       ├── statuslines.lua
+    │       ├── telescope.lua
+    │       └── toggleterm.lua
+    └── README.md
 ```
 
 <!-- 

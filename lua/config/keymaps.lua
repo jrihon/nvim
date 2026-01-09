@@ -119,6 +119,7 @@ vim.api.nvim_set_keymap("v", "<leader>pp", ":%w !xclip -selection clipboard<CR><
 vim.cmd[[command! -nargs=* W w]]
 vim.cmd[[command! -nargs=* Wq wq]]
 vim.cmd[[command! -nargs=* Q q]]
+vim.cmd[[command! -nargs=* Bw bw]]
 
 -- Make a command to call Rust's cargo system from the command mode
 vim.cmd[[command! -nargs=* Cargo !cargo <args>]]
