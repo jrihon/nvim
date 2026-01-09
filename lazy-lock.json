@@ -3,6 +3,7 @@
   "comfortable-motion.vim": { "branch": "master", "commit": "e20aeafb07c6184727b29f7674530150f7ab2036" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "lualine.nvim": { "branch": "master", "commit": "47f91c416daef12db467145e16bed5bbfe00add8" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "e5f73a9e3d271d449685f1059eb1868f4ba276f6" },
   "mason.nvim": { "branch": "main", "commit": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65" },
   "mutineer.lua": { "branch": "main", "commit": "72daf271605396a6bffbb676ad209c53f4221be2" },
   "nvim-autopairs": { "branch": "master", "commit": "c2a0dd0d931d0fb07665e1fedb1ea688da3b80b4" },
