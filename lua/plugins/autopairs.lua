@@ -1,7 +1,7 @@
 
 -- Add autopairing for inline $$ environment in latex
 
-opts_autopairs = {
+local opts_autopairs = {
   check_ts = true, -- treesitter integration
   map_cr = false, -- do not remap Carriage Return <CR>, this fucks up my entire nvim config
   disable_filetype = { "TelescopePrompt" },
