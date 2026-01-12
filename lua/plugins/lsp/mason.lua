@@ -21,8 +21,10 @@ local mason_opts = {
 -- These become readily available, so we don't have to 
 -- manually call them with vim.lsp.enable() anymore
 local mason_ensure_installed = {
-    "lua_ls",
-    "pyright",
+    "lua_ls",       -- lua
+    "pyright",      -- python
+    "marksman",     -- markdown
+    "vtsls",        -- typescript, javascript
 }
 
 return {
