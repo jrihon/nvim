@@ -23,8 +23,11 @@ local mason_opts = {
 local mason_ensure_installed = {
     "lua_ls",       -- lua
     "pyright",      -- python
+--    "ty",           -- python
     "marksman",     -- markdown
     "vtsls",        -- typescript, javascript
+    "yamlls",       -- yaml
+    "terraformls", -- terraform
 }
 
 return {

@@ -24,7 +24,8 @@ local options = {
   completeopt = {"menu", "menuone", "noselect"},        -- completion (cmp) stuff
   list = true,
   listchars = 'tab:→ ,trail:·,space:·', 			-- show hidden symbols, eol:⏎
-  termguicolors = true
+  termguicolors = true,
+--  clipboard = "unnamed"
 }
 -- far better readability by iterating over the table and prepending to option
 for k, v in pairs(options) do
@@ -47,3 +48,10 @@ vim.g.netrw_winsize = 25
 local create_autocmd = vim.api.nvim_create_autocmd
 local events = {"BufNewFile", "BufRead"}
 create_autocmd(events, { pattern = {"*.typ"}, command = [[ set filetype=typst ]]})
+
+
+-- disable arrow keys in INSERT MODE
+vim.cmd[[inoremap <Up> <Nop>]]
+vim.cmd[[inoremap <Down> <Nop>]]
+vim.cmd[[inoremap <Left> <Nop>]]
+vim.cmd[[inoremap <Right> <Nop>]]

@@ -32,6 +32,7 @@ return {
     -- the initial mode I want to start in is normal mode,
     -- because I probably switch buffers more often
       initial_mode = "normal",
+      file_ignore_patterns = {"playgrounds/"},
       i = { ["<CR>"] = actions.select_default, }
     },
   },
