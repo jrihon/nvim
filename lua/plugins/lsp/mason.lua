@@ -28,6 +28,7 @@ local mason_ensure_installed = {
     "vtsls",        -- typescript, javascript
     "yamlls",       -- yaml
     "terraformls", -- terraform
+    "cssls",        -- css
 }
 
 return {

@@ -51,21 +51,31 @@ return {
    dependencies = {
      "nvim-tree/nvim-web-devicons",
    },
-   opts = {
-     options = {
-       theme = theme,                                      -- Import the theme variable
-       component_separators = '|',
-       section_separators = { left = '', right = '' },   -- Bubble theme
-       sections = {
-         lualine_a = {
-           { 'mode', separator = { left = '' }, right_padding = 10 },
-         },
-         lualine_z = {
-           { 'location', separator = { right = '' }, left_padding = 10 },
-         },
-       },
-     },
-  },
+   config = function()
+       require('lualine').setup {
+           options = {
+             theme = theme,                                      -- Import the theme variable
+             component_separators = '|',
+             section_separators = { left = '', right = '' },   -- Bubble theme
+           },
+           sections = {
+             lualine_a = {
+               { 'mode', separator = { left = '' }, right_padding = 2 },
+             },
+             lualine_c = {
+               { 'filename', path = 1},
+               { 'datetime', style = "%H:%M"},
+             },
+             lualine_z = {
+               { 'location', separator = { right = '' }, left_padding = 2 },
+             },
+           },
+       }
+   end,
+--   opts = {
+--     options = {
+--     },
+--  },
 }
 
 --vim.opt.termguicolors = true

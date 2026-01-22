@@ -55,3 +55,8 @@ vim.cmd[[inoremap <Up> <Nop>]]
 vim.cmd[[inoremap <Down> <Nop>]]
 vim.cmd[[inoremap <Left> <Nop>]]
 vim.cmd[[inoremap <Right> <Nop>]]
+
+vim.cmd[[inoremap <S-Up> <Nop>]]
+vim.cmd[[inoremap <S-Down> <Nop>]]
+vim.cmd[[inoremap <S-Left> <Nop>]]
+vim.cmd[[inoremap <S-Right> <Nop>]]
