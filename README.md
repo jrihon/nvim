@@ -31,7 +31,18 @@ Before using pyright, first install `nvm` and `npm` through this [link](https://
 
 The `after/` directory is for specific, customised plugins for the lsp
 
+## Using treesitter
+
+Before installing treesitter, you need to have `tree-sitter-cli` installed 
+
+```shell
+curl https://sh.rustup.rs -sSf | sh
+sudo apt install clang      # linked dependency, stdbool.h
+cargo install --locked tree-sitter-cli
+```
+
 ## Lua config layout
+
 ```
 ~/.config/nvim/ 
     ├── after

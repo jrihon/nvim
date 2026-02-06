@@ -12,7 +12,8 @@ return({
       yaml = "#",
       dockerfile = "#",
       typst = "//",
-      toml = "#"
+      toml = "#",
+      typescriptreact = "//",
     },
   },
 })

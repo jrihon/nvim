@@ -23,9 +23,10 @@ local mason_opts = {
 local mason_ensure_installed = {
     "lua_ls",       -- lua
     "pyright",      -- python
---    "ty",           -- python
+--    "ty",           -- python , currently broken install
     "marksman",     -- markdown
     "vtsls",        -- typescript, javascript
+    "ts_ls", -- typescript, javascript : typescript-language-server
     "yamlls",       -- yaml
     "terraformls", -- terraform
     "cssls",        -- css
@@ -34,7 +35,14 @@ local mason_ensure_installed = {
 return {
   "mason-org/mason-lspconfig.nvim",
   opts = {
-      ensure_installed = mason_ensure_installed
+      ensure_installed = mason_ensure_installed,
+      automatic_enable = {
+          exclude = {
+              -- "vtsls",
+              "ts_ls",
+              "ty",
+          },
+      }
   },
   dependencies = {
     {

@@ -8,11 +8,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- set keybinds
     opts.desc = "Show LSP hover definition"
-    keymap.set("n", "gH", function()
-        vim.lsp.buf.hover {
-            border = "single"
-        }
-    end,
+    keymap.set("n", "gH",
+        function()
+            vim.lsp.buf.hover {
+                border = "single"
+            }
+        end,
     opts)
 
     opts.desc = "Format the current buffer"

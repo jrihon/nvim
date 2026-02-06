@@ -18,6 +18,7 @@ vim.g.mapleader = " "
 keymap('n', '<C-p>', ':Telescope find_files<CR>', opts )
 keymap('n', '<C-q>', ':Telescope buffers<CR>', opts )
 keymap('n', '<C-w>', ':Telescope live_grep<CR>', opts )
+keymap('n', '<C-g>', ':Telescope grep_string<CR>', opts )
 
 --[[ Mutineer remaps ]]
 keymap('n', '<leader>m', ':Mutineer<CR>', opts)
@@ -65,7 +66,7 @@ keymap("n", "<leader>k", ":wincmd k<CR>", opts ) -- shift from bottom window to 
 keymap("n", "<leader>j", ":wincmd j<CR>", opts ) -- shift from top window to bottom window
 keymap("n", "<leader>+", ":vertical resize +15<CR>", opts) -- resize vertical split larger
 keymap("n", "<leader>-", ":vertical resize -15<CR>", opts) -- resize vertical split smaller
---keymap("n", "<silent> <Leader>vs", ":vsplit <Bar> :wincmd l <Bar> :Files <CR>", opts) -- uses fzf.vim plugin
+keymap("n", "<Leader>vs", ":vsplit <CR> :wincmd l<CR>", opts) -- open vsplit and move to other window
 
 
 
@@ -113,7 +114,10 @@ end
 keymap("n", "<leader>c", ":lua QuickfixToggle()<CR>", opts )
 
 --[[ Custom keymaps ]]
-vim.api.nvim_set_keymap("v", "<leader>pp", ":%w !xclip -selection clipboard<CR><CR> :echo 'Selection clipped!'<CR>", opts )
+-- vim.api.nvim_set_keymap("v", "<leader>pp", ":%w !xclip -selection clipboard<CR><CR> :echo 'Selection clipped!'<CR>", opts )
+-- NOTE: always make sure that, when using multiple monitors, the primary display is the built-in one.
+-- xclip gets confused if you switch your primary display to an external one.
+vim.api.nvim_set_keymap("v", "<leader>pp", '"+y', opts )
 
 -- This actually maps the :W to :write !! I do this because I fat finger the :write command to :W often
 vim.cmd[[command! -nargs=* W w]]
