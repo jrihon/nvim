@@ -25,6 +25,7 @@ local mason_ensure_installed = {
     "pyright",      -- python
 --    "ty",           -- python , currently broken install
     "marksman",     -- markdown
+--    "mpls",     -- markdown       -- Download binary locally and add its config to nvim/lsp
     "vtsls",        -- typescript, javascript
     "ts_ls", -- typescript, javascript : typescript-language-server
     "yamlls",       -- yaml

@@ -1,12 +1,22 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 
---telescope.setup({
---  defaults = {
---    initial_mode = "normal",        -- the initial mode I want to start in is normal mode, because I probably switch buffers more often
---    i = { ["<CR>"] = actions.select_default, }
---  },
---})
+-- Do not ignore several files 
+-- Source - https://stackoverflow.com/a/75500661
+-- Posted by rainer, modified by community. See post 'Timeline' for change history
+-- Retrieved 2026-02-27, License - CC BY-SA 4.0
+
+local telescope = require("telescope")
+local telescopeConfig = require("telescope.config")
+
+-- Clone the default Telescope configuration
+local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
+
+-- I want to search in hidden/dot files.
+table.insert(vimgrep_arguments, "--hidden")
+-- I don't want to search in the `.git` directory.
+table.insert(vimgrep_arguments, "--glob")
+table.insert(vimgrep_arguments, "!**/.git/*")
 
 
 -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
@@ -35,6 +45,13 @@ return {
       file_ignore_patterns = {"playgrounds/"},
       i = { ["<CR>"] = actions.select_default, }
     },
+  pickers = {
+    find_files= {
+      hidden = true,
+      -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+    },
+   },
   },
 }
 
