@@ -19,6 +19,17 @@ keymap('n', '<C-p>', ':Telescope find_files<CR>', opts )
 keymap('n', '<C-q>', ':Telescope buffers<CR>', opts )
 keymap('n', '<C-w>', ':Telescope live_grep<CR>', opts )
 keymap('n', '<C-g>', ':Telescope grep_string<CR>', opts )
+keymap('v', '<C-g>', 'zy:Telescope grep_string default_text=<C-r>z<CR>', opts )
+vim.keymap.set('v', '<C-g>', function()
+    -- Yank selection to register z
+    vim.cmd('noau normal! "zy"')
+    local selection = vim.fn.getreg('z')
+    -- Clean up selection to avoid issues with newlines
+    selection = string.gsub(selection, "\n", "")
+    require('telescope.builtin').grep_string({ default_text = selection })
+  end,
+  { desc = 'Grep visual selection' }
+)
 
 --[[ Mutineer remaps ]]
 keymap('n', '<leader>m', ':Mutineer<CR>', opts)
