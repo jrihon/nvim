@@ -14,6 +14,7 @@ return({
       typst = "//",
       toml = "#",
       typescriptreact = "//",
+      terraform = "#",
     },
   },
 })

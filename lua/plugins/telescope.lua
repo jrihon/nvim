@@ -6,7 +6,7 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Posted by rainer, modified by community. See post 'Timeline' for change history
 -- Retrieved 2026-02-27, License - CC BY-SA 4.0
 
-local telescope = require("telescope")
+--local telescope = require("telescope")
 local telescopeConfig = require("telescope.config")
 
 -- Clone the default Telescope configuration
@@ -31,7 +31,7 @@ autocmd("VimEnter", {
 })
 
 return {
-  'nvim-telescope/telescope.nvim',
+  'nvim-telescope/telescope.nvim', version = "*",
   dependencies = {
       'nvim-lua/plenary.nvim',
       -- optional but recommended

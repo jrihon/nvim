@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 --    end, opts) -- jump to next diagnostic in buffer
 
     opts.desc = "Restart LSP"
-    keymap.set("n", "grs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+    keymap.set("n", "grs", ":lsp restart<CR>", opts) -- mapping to restart lsp if necessary
   end,
 })
 
