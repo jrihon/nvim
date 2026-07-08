@@ -1,5 +1,11 @@
 return {
   settings = {
+    -- Set in pyproject.toml, when working with uv
+    -- ```
+    -- [tool.pyright]
+    -- venvPath = "."
+    -- venv = ".venv"
+    -- ```
     python = {
 --      disableLanguageServices = true,
 --      disableOrganizeImports  = false,

@@ -30,6 +30,16 @@ autocmd("VimEnter", {
   end,
 })
 
+-- include playgrounds/ directory if cwd is in playgrounds
+local ignore_file_pattern = function ()
+  local cwd = vim.env.PWD       -- only way to get current working directory without vim-rooter changing things
+  local pattern = "playgrounds"
+  local match, _ = string.find(cwd, pattern)
+  if match == nil then
+     return {"playgrounds/"}
+  end
+end
+
 return {
   'nvim-telescope/telescope.nvim', version = "*",
   dependencies = {
@@ -42,7 +52,7 @@ return {
     -- the initial mode I want to start in is normal mode,
     -- because I probably switch buffers more often
       initial_mode = "normal",
-      file_ignore_patterns = {"playgrounds/"},
+      file_ignore_patterns = ignore_file_pattern(),
       i = { ["<CR>"] = actions.select_default, }
     },
   pickers = {
