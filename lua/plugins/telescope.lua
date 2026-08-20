@@ -36,7 +36,9 @@ local ignore_file_pattern = function ()
   local pattern = "playgrounds"
   local match, _ = string.find(cwd, pattern)
   if match == nil then
-     return {"playgrounds/"}
+     return {".ipynb", "playgrounds/"}
+  else
+      return {".ipynb"}
   end
 end
 
