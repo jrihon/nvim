@@ -3,16 +3,17 @@
   ------------------------------------------------------------------ ]]
   ---
 local colors = {
-            darkgray = "#16161d",
-            gray = "#727169",
-            innerbg = nil,
-            outerbg = "#16161D",
-            normal = "#7e9cd8",
-            insert = "#98bb6c",
-            visual = "#ffa066",
-            replace = "#e46876",
-            command = "#e6c384",
-        }
+    darkgray = "#16161d",
+    gray = "#727169",
+    innerbg = nil,      -- transparent for section
+    outerbg = nil,      -- transparent for section
+    normal = "#7e9cd8",
+    insert = "#98bb6c",
+    visual = "#ffa066",
+    replace = "#e46876",
+    command = "#e6c384",
+}
+
 local theme = {     -- Set a colorscheme for all modes of vim
             inactive = {
                 a = { fg = colors.gray, bg = colors.outerbg, gui = "bold" },
