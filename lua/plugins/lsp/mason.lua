@@ -22,8 +22,8 @@ local mason_opts = {
 -- manually call them with vim.lsp.enable() anymore
 local mason_ensure_installed = {
     "lua_ls",       -- lua
-    "pyright",      -- python
---    "ty",           -- python , currently broken install
+--    "pyright",      -- python
+    "ty",           -- python , currently broken install
     "marksman",     -- markdown
 --    "mpls",     -- markdown       -- Download binary locally and add its config to nvim/lsp
     "vtsls",        -- typescript, javascript
@@ -41,7 +41,8 @@ return {
           exclude = {
               -- "vtsls",
               "ts_ls",
-              "ty",
+--              "ty",
+              "pyright",
           },
       }
   },
