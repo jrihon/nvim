@@ -49,7 +49,6 @@ local create_autocmd = vim.api.nvim_create_autocmd
 local events = {"BufNewFile", "BufRead"}
 create_autocmd(events, { pattern = {"*.typ"}, command = [[ set filetype=typst ]]})
 
-
 -- disable arrow keys in INSERT MODE
 vim.cmd[[inoremap <Up> <Nop>]]
 vim.cmd[[inoremap <Down> <Nop>]]

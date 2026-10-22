@@ -31,6 +31,7 @@ local mason_ensure_installed = {
     "yamlls",       -- yaml
     "terraformls", -- terraform
     "cssls",        -- css
+    "nextflow_ls",        -- nextflow
 }
 
 return {
